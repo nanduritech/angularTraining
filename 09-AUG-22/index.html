@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Features</title>
+    <style>
+        button.btn.active {
+    background: blue;
+    color: #fff;
+    padding: 5px 20px;
+    border: 0;
+}
+li.active{
+    color:blueviolet;
+    font-size: 14px;
+    font-family: 'Courier New', Courier, monospace;
+}
+section.section.bg {
+    background: #e2e2e2;
+    padding: 20px;
+}
+    </style>
+</head>
+<body  id="Element">
+
+<button class="btn" onclick="creteListItem()">Click</button>
+<button class="active" onclick="addElement()">Add Element</button>
+
+<button class="btn">BTN1</button>
+<button class="btn">BTN2</button>
+<button class="btn">BTN3</button>
+<button class="btn">BTN4</button>
+<button class="btn">BTN5</button>
+<button class="btn">BTN6</button>
+<button class="btn">BTN7</button>
+
+<section class="section">Content Section</section>
+
+
+    <script>
+        function creteListItem(){
+            var btn = document.querySelector('.btn');
+            btn.classList.add('active');
+            console.log('button is clicked');
+        }
+
+     function addElement(){
+        var li = document.createElement('li');
+        var body = document.getElementById('Element');
+        li.innerHTML = "List Item";
+        li.classList.add('active');
+        body.appendChild(li);
+     }   
+
+     document.addEventListener('click', function ElementClick(event){
+        console.log("the document is clicked")
+        event.target.classList.add('bg')
+     })
+    </script>
+</body>
+</html>
