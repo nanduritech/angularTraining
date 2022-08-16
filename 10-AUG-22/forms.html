@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+    <style>
+        .small{
+            color:red;
+            display:none;
+        }
+        .small.active{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <form name="RegForm" action="mailto:muvvasaisudhakar@gmail.com" onsubmit="return submitForm()" >
+             
+        <div class>Name: <input type="text"
+        size="65" name="Name" />
+    <div class="small username">Please enter your name</div>
+    </p>
+
+        <br />
+
+        <p>Address: <input type="text"
+        size="65" name="Address"  />
+        </p>
+        <div class="small address">Please enter Address</div>
+        password
+        mobilenumber
+        email
+        <input type="submit"
+                    value="send" name="Submit" />
+</form>
+<script>
+    function submitForm() {
+    var name = document.forms.RegForm.Name.value;
+    var address = document.forms.RegForm.Address.value;
+
+                if (name == "") {
+                document.querySelector('.username').classList.add('active')
+                document.forms.RegForm.Name.focus();
+                return false;
+            }
+
+            if(address == ""){
+                document.querySelector('.address').classList.add('active')
+                document.forms.RegForm.address.focus();
+                return false;
+            }
+
+            return true;
+
+    }
+</script>
+</body>
+</html>
