@@ -1,0 +1,43 @@
+<ul>
+    <li *ngFor="let product of Products; let i = index;">
+        {{i+1}} - {{product.name}}
+    </li>
+</ul>
+
+<!--
+    -> the syntax is *ngFor="let <value> of <collection>"
+    -> value is a variable name of choosing collection
+    -> collection is an array on your component that can be iterated over for-of loop.
+-->
+
+<ul *ngFor="let company of CompanyProducts">
+   <li>{{company.make}}</li>
+   <ul>
+     <li *ngFor="let product of company.products">
+        {{product.name}}
+     </li>
+   </ul>
+</ul>
+
+<button (click)="showElement()"  class="btn btn-primary">View</button>
+
+<div *ngIf="view">Element Viewed</div>
+
+<div [ngClass]="view?'alert alert-success':'alert alert-danger'">
+    {{view ?"Element Viewed by Button Click":"Element Removed by Button Click"}}
+</div>
+
+<div *ngIf="elseview=='name';else Elseblock">
+ <h1>Heelo</h1>
+</div>
+
+<ng-template #Elseblock>Else Block</ng-template>
+
+<div [ngSwitch]="Course">
+    <p *ngSwitchCase="'Javascript'">Javascript</p>
+    <p *ngSwitchCase="'Angular'">Angular</p>
+    <p *ngSwitchDefault>HTML Course</p>
+</div>
+
+
+

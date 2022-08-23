@@ -1,0 +1,29 @@
+<!-- #registerForm="ngForm" -->
+
+<form #registerForm="ngForm" method="post" class="horizontal-form" (ngSubmit)="validateSignup(registerForm)">
+    <div class="formgroup">
+        <label >Surname</label>
+        <input type="text" name="surName" #userName="ngModel" id="surName" [(ngModel)]="formData.surname" placeholder="Surname" class="form-control" required/>
+        <div *ngIf="userName.invalid && (userName.dirty || userName.touched)" class="alert alert-danger">
+            <div *ngIf="userName.errors?.['required']">Username is required</div>
+        </div>
+    </div>
+    
+    <div class="formgroup">
+        <label >Username</label>
+        <input type="text" name="userName" #name="ngModel" id="userName" [(ngModel)]="formData.name" placeholder="Username" class="form-control" required/>
+        <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+            <div *ngIf="name.errors?.['required']">Name is required</div>
+        </div>
+    </div>
+
+    <div class="formgroup">
+        <label >District</label>
+        <input type="text" name="userName" #name="ngModel" id="userName" [(ngModel)]="formData.name" placeholder="Username" class="form-control" required/>
+        <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+            <div *ngIf="name.errors?.['required']">Name is required</div>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-2" [disabled]="registerForm.invalid">Submit</button>
+</form>
