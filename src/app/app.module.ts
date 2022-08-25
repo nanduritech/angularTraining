@@ -8,6 +8,7 @@ import { RegistrationComponent } from './registration/registration.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { ElemensComponent } from './elemens/elemens.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { EmployeeTitlePipe } from './employee-title.pipe';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     RegistrationComponent,
     SignUpComponent,
     ElemensComponent,
-    DashboardComponent
+    DashboardComponent,
+    EmployeeTitlePipe
   ],
   imports: [
     BrowserModule,

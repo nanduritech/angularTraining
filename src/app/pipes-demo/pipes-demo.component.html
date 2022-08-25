@@ -1,0 +1,31 @@
+<p>{{today | date:'medium'}}</p>
+<p>{{today | date:'shortTime'}}</p>
+<!-- <p>{{today | date:'MM:SS'}}</p> -->
+<p>{{today | date:'short'}}</p>
+
+<!--upper case pipe-->
+{{name | uppercase}}
+{{name | lowercase}}
+{{name | titlecase}}
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+        <th>Name</th>
+        <th>Emp ID</th>
+        <th>Gender</th>
+        <th>Emp Salary</th>
+        <th>Date of  Birth</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let emp of employess">
+        <td>{{emp.name | employeeTitle:emp.gender}}</td>
+        <td>{{emp.empId}}</td>
+        <td>{{emp.gender}}</td>
+        <td>{{emp.AnnualSalary | currency:"INR":true:'1.2-3'}}</td>
+        <td>{{emp.dob}}</td>
+    </tr>
+  </tbody>
+</table>
+
