@@ -9,6 +9,8 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { ElemensComponent } from './elemens/elemens.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { EmployeeTitlePipe } from './employee-title.pipe';
+import { HeaderComponent } from './header/header.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { EmployeeTitlePipe } from './employee-title.pipe';
     SignUpComponent,
     ElemensComponent,
     DashboardComponent,
-    EmployeeTitlePipe
+    EmployeeTitlePipe,
+    HeaderComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
