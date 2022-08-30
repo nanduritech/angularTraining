@@ -20,7 +20,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     SignUpComponent,
     ElemensComponent,
     DashboardComponent,
-    EmployeeTitlePipe,
+    EmployeeTitlePipe,  
     HeaderComponent,
     PipesDemoComponent,
     NotFoundComponent
