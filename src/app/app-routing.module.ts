@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ElemensComponent } from './elemens/elemens.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { PipesDemoComponent } from './pipes-demo/pipes-demo.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 
@@ -10,7 +12,9 @@ const routes: Routes = [
   {path:'registration', component:RegistrationComponent },
   {path:'signup',component:SignUpComponent},
   {path:'Elemens',component:ElemensComponent},
-  {path:'dashboard',component:DashboardComponent}
+  {path:'dashboard',component:DashboardComponent},
+  {path:'pipes',component:PipesDemoComponent},
+  {path:'**',component:NotFoundComponent},
 ];
 
 @NgModule({

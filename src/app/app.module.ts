@@ -10,6 +10,7 @@ import { ElemensComponent } from './elemens/elemens.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { EmployeeTitlePipe } from './employee-title.pipe';
 import { HeaderComponent } from './header/header.component';
+import { PipesDemoComponent } from './pipes-demo/pipes-demo.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
@@ -21,6 +22,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     DashboardComponent,
     EmployeeTitlePipe,
     HeaderComponent,
+    PipesDemoComponent,
     NotFoundComponent
   ],
   imports: [
