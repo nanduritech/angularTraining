@@ -6,6 +6,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { PipesDemoComponent } from './pipes-demo/pipes-demo.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { StadiumDetailsComponent } from './stadium-details/stadium-details.component';
 
 const routes: Routes = [
   {path:'',component:RegistrationComponent},
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path:'Elemens',component:ElemensComponent},
   {path:'dashboard',component:DashboardComponent},
   {path:'pipes',component:PipesDemoComponent},
+  {path:'stadiumDetails/:id',component:StadiumDetailsComponent},
   {path:'**',component:NotFoundComponent},
 ];
 

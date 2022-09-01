@@ -9,7 +9,7 @@ import { CommonService } from '../common.service';
 export class DashboardComponent implements OnInit {
   sportsList!: { id: number; img: string; rating: number; title: string; landmark: string; }[];
 
-  constructor(private commonService:CommonService) { }
+  constructor(private commonService:CommonService,private router:Router) { }
 
   ngOnInit(): void {
    this.getSports()
@@ -19,4 +19,7 @@ export class DashboardComponent implements OnInit {
     this.sportsList = this.commonService.getSports();
   }
 
+  getDetails(stadiumid:number){
+    this.router.navigate(['/stadiumDetails',stadiumid]);
+  }
 }

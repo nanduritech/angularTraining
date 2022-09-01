@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { of } from 'rxjs';
 
 export interface Stadium{
   id:number;
@@ -26,5 +27,10 @@ export class CommonService {
 getSports(){
   return this.StadiumList;
 }
+
+getStadium(id:number){
+  return of(this.StadiumList.find(stadium => stadium.id === id))
+}
+
 
 }

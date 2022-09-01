@@ -1,7 +1,7 @@
 
 <div class="container-fluid mt-4">
     <div class="row">
-        <div class="col-md-3" *ngFor="let stadium of sportsList" >
+        <div class="col-md-3" *ngFor="let stadium of sportsList" (click)="getDetails(stadium.id)">
             <img src="{{stadium.img}}" alt="{{stadium.title}}" class="img-fluid"/>
             <div>{{stadium.title}}</div>
             <div>{{stadium.landmark}}</div>

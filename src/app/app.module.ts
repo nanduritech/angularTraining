@@ -12,6 +12,7 @@ import { EmployeeTitlePipe } from './employee-title.pipe';
 import { HeaderComponent } from './header/header.component';
 import { PipesDemoComponent } from './pipes-demo/pipes-demo.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { StadiumDetailsComponent } from './stadium-details/stadium-details.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
     EmployeeTitlePipe,  
     HeaderComponent,
     PipesDemoComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    StadiumDetailsComponent
   ],
   imports: [
     BrowserModule,
