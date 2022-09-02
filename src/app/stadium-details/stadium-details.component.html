@@ -10,7 +10,7 @@
     </div>
     <div class="col-md-6">
         <nav>
-            <a class="nav-item me-3" routerLink="/stadiumDetails/{{stadium.id}}/overview" [queryParams]="{name: 'overview'}" >Over View</a>
+            <a class="nav-item me-3" routerLink="/stadiumDetails/{{stadium.id}}/overview" [queryParams]="{name: 'overview',id:stadium.landmark}" >Over View</a>
             <a class="nav-item" routerLink="/stadiumDetails/{{stadium.id}}/specifications">Specifications</a>
         </nav>
         <router-outlet></router-outlet>
