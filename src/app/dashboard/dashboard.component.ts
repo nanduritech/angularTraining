@@ -8,6 +8,7 @@ import { CommonService } from '../common.service';
 })
 export class DashboardComponent implements OnInit {
   sportsList!: { id: number; img: string; rating: number; title: string; landmark: string; }[];
+  name: string = 'coach';
 
   constructor(private commonService:CommonService,private router:Router) { }
 
@@ -17,6 +18,10 @@ export class DashboardComponent implements OnInit {
 
   getSports(){
     this.sportsList = this.commonService.getSports();
+  }
+
+  getRole($event:any){
+    this.name = $event.target.value;
   }
 
   getDetails(stadiumid:number){

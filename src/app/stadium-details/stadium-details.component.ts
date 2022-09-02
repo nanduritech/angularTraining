@@ -8,6 +8,7 @@ import { CommonService,Stadium } from '../common.service';
 })
 export class StadiumDetailsComponent implements OnInit {
 stadium :Stadium | undefined
+  Role!: string | null;
   //stadiumInfo: { id: number; img: string; rating: number; title: string; landmark: string; } | undefined;
   constructor(private routes:ActivatedRoute,private commonService:CommonService) { }
 
@@ -17,10 +18,10 @@ stadium :Stadium | undefined
 
  getStadium(){
   const id = Number(this.routes.snapshot.paramMap.get('id'));
-  console.log(id)
   this.commonService.getStadium(id).subscribe((stadium)=>{
     this.stadium = stadium;
     console.log(this.stadium)
+    this.Role = this.routes.snapshot.paramMap.get('name');
   })
  }
 }

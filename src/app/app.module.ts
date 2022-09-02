@@ -13,6 +13,8 @@ import { HeaderComponent } from './header/header.component';
 import { PipesDemoComponent } from './pipes-demo/pipes-demo.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { StadiumDetailsComponent } from './stadium-details/stadium-details.component';
+import { OverviewComponent } from './stadium-details/overview/overview.component';
+import { SpecificationsComponent } from './stadium-details/specifications/specifications.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { StadiumDetailsComponent } from './stadium-details/stadium-details.compo
     HeaderComponent,
     PipesDemoComponent,
     NotFoundComponent,
-    StadiumDetailsComponent
+    StadiumDetailsComponent,
+    OverviewComponent,
+    SpecificationsComponent
   ],
   imports: [
     BrowserModule,

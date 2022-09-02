@@ -1,5 +1,6 @@
 <div *ngIf="stadium">
-   
+   <h2>{{Role}}</h2> 
+   <div class="row">
     <div class="col-md-6">
        <img src="{{stadium.img}}" alt="{{stadium.img}}" class="img-fluid"/>
        <div>{{stadium.id}}</div>
@@ -7,5 +8,12 @@
        <div>{{stadium.title}}</div>
        <div>{{stadium.landmark}}</div>
     </div>
-  
+    <div class="col-md-6">
+        <nav>
+            <a class="nav-item me-3" routerLink="/stadiumDetails/{{stadium.id}}/overview" [queryParams]="{name: 'overview'}" >Over View</a>
+            <a class="nav-item" routerLink="/stadiumDetails/{{stadium.id}}/specifications">Specifications</a>
+        </nav>
+        <router-outlet></router-outlet>
+    </div>
+</div>
 </div>
