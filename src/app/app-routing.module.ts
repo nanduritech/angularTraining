@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuardService } from './auth-guard.service';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ElemensComponent } from './elemens/elemens.component';
 import { NotFoundComponent } from './not-found/not-found.component';
@@ -18,12 +19,14 @@ const routes: Routes = [
   {path:'dashboard',component:DashboardComponent},
   {path:'pipes',component:PipesDemoComponent},
   {path:'stadiumDetails/:id',component:StadiumDetailsComponent,
+  //stadiumDetails/2/?name="stadiumDetails/overview"
   children:[
     {path:'', component:OverviewComponent},
     {path:'overview', component:OverviewComponent},
     {path:'specifications',component:SpecificationsComponent}
   ]
 },
+  { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
   {path:'**',component:NotFoundComponent},
 ];
 

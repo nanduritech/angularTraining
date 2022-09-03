@@ -1,0 +1,46 @@
+<form [formGroup]="registerForm" name="registerForm"  class="horizontal-form" (ngSubmit)="validForm()">
+    <div class="formgroup">
+        <label >Surname</label>
+        <input [ngClass]="{'is-invalid':submitted && rf['surName'].errors}" type="text" name="surName" id="surName" placeholder="Surname" class="form-control" formControlName="surName" />
+        <div *ngIf="submitted && rf['surName'].errors" class="invalid-feedback">
+            <div *ngIf="rf['surName'].errors?.['required']" >Surname is Required </div>
+        </div>
+    </div>
+    
+
+    <div class="formgroup">
+        <label>Username</label>
+         <input [ngClass]="{'is-invalid':submitted && rf['userName'].errors}" type="text" name="username" id="username" placeholder="User name" class="form-control" formControlName="userName" />
+        <div *ngIf="submitted && rf['userName'].errors" class="invalid-feedback">
+            <div *ngIf="rf['userName'].errors?.['required']" >Username is Required </div>
+        </div>
+    </div>
+
+    <div class="formgroup">
+        <label>Select District</label>
+        <select (change)="getMandals($event)" [ngClass]="{'is-invalid':submitted && rf['district'].errors}" name="district" id="district" formControlName="district" class="form-select">
+            <option value="" selected>Select</option>
+             <option *ngFor="let district of districts" [value]="district.value">
+                {{district.name}}
+             </option>
+        </select>
+        <div *ngIf="submitted && rf['district'].errors" class="invalid-feedback">
+            <div *ngIf="rf['district'].errors?.['required']" >District name is Required </div>
+        </div>
+    </div>
+
+    <div class="formgroup">
+        <label>Select Mandal</label>
+        <select [ngClass]="{'is-invalid':submitted && rf['mandal'].errors}" name="mandal" id="mandal" formControlName="mandal" class="form-select">
+            <option value="" selected>Select</option>
+             <option *ngFor="let mandal of mandals">
+                {{mandal.name}}
+             </option>
+        </select>
+        <div *ngIf="submitted && rf['mandal'].errors" class="invalid-feedback">
+            <div *ngIf="rf['mandal'].errors?.['required']" >Please Select Mandal</div>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-2" >Submit</button>
+</form>
