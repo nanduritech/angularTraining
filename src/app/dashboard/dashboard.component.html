@@ -9,8 +9,8 @@
         </select>
         </div>
         <div class="col-md-8">
-            <div class="row"><!--(click)="getDetails(stadium.id)" ,{name:{{name}}}-->
-                <div class="col-md-3" *ngFor="let stadium of sportsList" routerLink="/stadiumDetails/{{stadium.id}}" [queryParams]="{name:'stadiumDetails'}">
+            <div class="row"><!--(click)="getDetails(stadium.id)" ,{name:{{name}}}  [queryParams]="{name:'stadiumDetails'}-->
+                <div class="col-md-3" *ngFor="let stadium of sportsList" routerLink="/stadiumDetails/{{stadium.id}}" >
                     <img src="{{stadium.img}}" alt="{{stadium.title}}" class="img-fluid"/>
                     <div>{{stadium.title}}</div>
                     <div>{{stadium.landmark}}</div>

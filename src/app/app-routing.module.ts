@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuardActivateService } from './auth-guard-activate.service';
 import { AuthGuardService } from './auth-guard.service';
+import { CanactivateChildService } from './canactivate-child.service';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ElemensComponent } from './elemens/elemens.component';
 import { NotFoundComponent } from './not-found/not-found.component';
@@ -18,10 +20,11 @@ const routes: Routes = [
   {path:'Elemens',component:ElemensComponent},
   {path:'dashboard',component:DashboardComponent},
   {path:'pipes',component:PipesDemoComponent},
-  {path:'stadiumDetails/:id',component:StadiumDetailsComponent,
-  //stadiumDetails/2/?name="stadiumDetails/overview"
+  {path:'stadiumDetails/:id',component:StadiumDetailsComponent,canActivate:[AuthGuardActivateService],
+  //stadiumDetails/2/?name="stadiumDetails/overview",
+  canActivateChild:[CanactivateChildService],
   children:[
-    {path:'', component:OverviewComponent},
+    //{path:'', component:OverviewComponent},
     {path:'overview', component:OverviewComponent},
     {path:'specifications',component:SpecificationsComponent}
   ]

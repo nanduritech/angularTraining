@@ -29,6 +29,8 @@ getSports(){
 }
 
 getStadium(id:number){
+  //sessionStorage.setItem('name','Stadiums');
+  sessionStorage.setItem('name','Admin');
   return of(this.StadiumList.find(stadium => stadium.id === id))
 }
 
