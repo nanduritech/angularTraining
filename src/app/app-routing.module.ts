@@ -20,7 +20,8 @@ const routes: Routes = [
   {path:'Elemens',component:ElemensComponent},
   {path:'dashboard',component:DashboardComponent},
   {path:'pipes',component:PipesDemoComponent},
-  {path:'stadiumDetails/:id',component:StadiumDetailsComponent,canActivate:[AuthGuardActivateService],
+  {path:'stadiumDetails/:id',component:StadiumDetailsComponent,
+  canActivate:[AuthGuardActivateService],
   //stadiumDetails/2/?name="stadiumDetails/overview",
   canActivateChild:[CanactivateChildService],
   children:[
